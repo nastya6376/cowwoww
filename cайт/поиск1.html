@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" type="text/css" href="poisk1.css">
+</head>
+<body>
+    <a href="index.html" class="back-button">Назад</a>
+    <div class="container">
+        <h1>Блог</h1>
+
+        <a href="#" class="button" id="addAdButton">Добавить объявление</a>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2 class="custom-h2">Добавить объявление</h2>
+                <form class="custom-form" id="adForm">
+                <label class="custom-label" for="author">Автор:</label>
+                <input class="custom-input" type="text" id="author" required>
+        
+                <label class="custom-label" for="title">Заголовок:</label>
+                <input class="custom-input" type="text" id="title" required>
+        
+                <label class="custom-label" for="description">Описание:</label>
+                <textarea class="custom-textarea" id="description" required></textarea>
+                
+                <label class="custom-label" for="topic">Тема:</label>
+                <select class="custom-input" id="topic" required>
+                    <option value="Овощи">Овощи</option>
+                    <option value="Фрукты">Фрукты</option>
+                    <option value="Поставки">Поставки</option>
+                </select>
+                
+                <button class="custom-button" type="submit">Добавить объявление</button>
+                </form>
+            </div>
+        </div>
+        <a href="ближяр.html" class="button">Ближайшие ярмарки</a>
+
+        <div class="sections">
+            <div class="section">
+                <h2>Тема</h2>
+                <select id="topicFilter" onchange="filterNews()">
+                    <option value="">Все темы</option>
+                    <option value="Овощи">Овощи</option>
+                    <option value="Фрукты">Фрукты</option>
+                    <option value="Поставки">Поставки</option>
+                </select>
+            </div>
+            <div class="section">
+                <h2>Автор/бренд</h2>
+                <select id="authorFilter" onchange="filterNews()">
+                    <option value="">Все авторы</option>
+                    <option value="Фермер А">Фермер А</option>
+                    <option value="Фермер Б">Фермер Б</option>
+                    <option value="Фермер В">Фермер В</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <h2>Подписки</h2>
+                <button class="button" id="showSubscriptionsButton">Показать мои подписки</button>
+                <button class="button" id="showAllNewsButton">Показать все новости</button>
+            </div>
+        </div>
+
+        <div class="news">
+            <h2>Новости</h2>
+            <ul id="newsList">
+                <li data-author="Фермер А" data-topic="Овощи">
+                    <div><strong>Фермер А</strong><br>Мы собираем урожай!</div>
+                    <div style="display:flex; align-items:center;">
+                        <button class="like-button" onclick="likePost(this)">
+                            ❤️ 
+                        </button>
+                        <span class="like-count"><span class="count">0</span></span>
+                    </div>
+                </li>
+                <li data-author="Фермер Б" data-topic="Фрукты">
+                    <div><strong>Фермер Б</strong><br>Новые сорта помидоров!</div>
+                    <div style="display:flex; align-items:center;">
+                        <button class="like-button" onclick="likePost(this)">
+                            ❤️
+                        </button>
+                        <span class="like-count"><span class="count">0</span></span>
+                    </div>
+                </li>
+                <li data-author="Фермер В" data-topic="Поставки">
+                    <div><strong>Фермер В</strong><br>Участие в ярмарке в этом месяце!</div>
+                    <div style="display:flex; align-items:center;">
+                        <button class="like-button" onclick="likePost(this)">
+                            ❤️ 
+                        </button>
+                        <span class="like-count"><span class="count">0</span></span>
+                    </div>
+                </li>
+                <li data-author="Фермер А" data-topic="Овощи">
+                    <div><strong>Фермер А</strong><br>Скоро новая поставка овощей!!!</div>
+                    <div style="display:flex; align-items:center;">
+                        <button class="like-button" onclick="likePost(this)">
+                            ❤️ 
+                        </button>
+                        <span class="like-count"><span class="count">0</span></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="poisk1.js"></script>
+    <footer class="footer">
+       @ 2025 CowWow. Все права защищены 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Служба Поддержки</title>
+    <link rel="stylesheet" type="text/css" href="службапод.css">
+
+</head>
+<body>
+    <a href="index.html" class="back-button">Вернуться на главную</a>
+    <div class="container">
+        <h1>Служба Поддержки</h1>
+
+        <p>Добро пожаловать в службу поддержки сайта "CowWow"! Мы здесь, чтобы помочь вам.</p>
+
+        <div class="search-box">
+          <input type="text" id="searchFaq" placeholder="Поиск по часто задаваемым вопросам">
+          <button>Поиск</button>
+        </div>
+
+        <section class="faq-section">
+            <h2>Часто Задаваемые Вопросы (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">Как найти фермера рядом со мной?</div>
+                <div class="faq-answer">Если вы заполнили регистрационную форму правильно, то Вам нужно перейти на вкладку "Каталог" и ввести в строке справа "Поиск фермера", например, "Фермер по продаже фруктов".</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Как добавить свой фермерский продукт на сайт?</div>
+                <div class="faq-answer">Перейдите в "Контакты" и напишите на нашу почту, добавив информацию о своих товарах, далее Вас проконсультирует модератор. Если Ваш аккаунт уже подтвержден, то нужно перейти в личный кабинет, нажать на кнопу "Добавить товар", заполнить форму и нажать на кнопку "Сохранить." </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Как связаться с фермером напрямую?</div>
+                <div class="faq-answer">На странице фермера нужно нажать на кнопку "Написать фермеру в личный чат".</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Как я могу оставить отзыв о фермере или рынке?</div>
+                <div class="faq-answer">После совершения покупки или посещения рынка появится возможность оставить отзыв. Для этого нужно перейти в "Личный кабинет", нажать на кнопку "Мои отзывы", затем нажать на кнопку "Добавить отзыв" и заполнить форму. Ваш отзыв отобразиться на странице продукта.</div>
+            </div>
+            <!-- Добавьте больше FAQ -->
+        </section>
+
+        <section class="contact-form">
+            <h2>Связаться с нами</h2>
+            <p>Если вы не нашли ответ на свой вопрос в FAQ, пожалуйста, заполните форму ниже:</p>
+            <form id="supportForm" action="#" method="post"> <!-- action="process_support_form.php" - замените на ваш обработчик -->
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="topic">Тема:</label>
+                <select id="topic" name="topic">
+                    <option value="account">Вопросы по аккаунту</option>
+                    <option value="product">Вопросы по продукту</option>
+                    <option value="payment">Вопросы по оплате</option>
+                    <option value="technical">Технические вопросы</option>
+                    <option value="other">Другое</option>
+                </select>
+
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Отправить сообщение</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="службапод.js"></script>
+    <footer class="footer">
+        Все права защищены &copy; 2025
+    </footer>
+</body>
+</html>

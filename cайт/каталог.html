@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог продуктов питания</title>
+   <style>
+     body {
+        background-image:url(IMG_0476.JPG);
+            background-repeat: no-repeat; 
+            background-size: 100% 100%; 
+            background-position: center center; 
+            background-attachment: fixed; 
+            -webkit-background-size: cover; 
+            -moz-background-size: cover; 
+             -o-background-size: cover; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #81c483;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.price {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+footer {
+    position:  absolute ;
+    bottom: 0;
+    text-align: center;
+    background-color: #81c483;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+main{
+    float: center;
+	    margin-right: 300px;
+        margin-left: 300px;
+	    padding-top: 25px;    
+}
+  
+   </style>
+</head>
+<body>
+    <header>
+        <p align="center" color=""><A href="главная.html"><u> Вернуться на главную </u></A></p>
+        <h1>Каталог продуктов питания</h1>
+    </header>
+    <main>
+        <section class="product-list">
+            <article class="product">
+                <img src="молоко.jpg" alt="Продукт 1">
+                <h2>Молоко 1л.</h2>
+                <span class="price">Цена: 80 руб.</span>
+            </article>
+
+            <article class="product">
+                <img src="творог.jpg" alt="Продукт 2">
+                <h2>Творог 400 грамм.</h2>
+                <span class="price">Цена: 200 руб.</span>
+            </article>
+
+            <article class="product">
+                <img src="клубника.jpg" alt="Продукт 3">
+                <h2>Клубника свежая 1кг.</h2>
+                <span class="price">Цена: 500 руб.</span>
+            </article>
+            <article class="product">
+                <img src="черника.jpg" alt="Продукт 4">
+                <h2>Черника свежая 1кг.</h2>
+                <span class="price">Цена: 200 руб.</span>
+            </article>
+            <article class="product">
+                <img src="малина.jpg" alt="Продукт 5">
+                <h2>Малина свежая 1кг.</h2>
+                <span class="price">Цена: 900 руб.</span>
+            </article>
+            <article class="product">
+                <img src="черри.jpg" alt="Продукт 6">
+                <h2>Помидоры черри тепличные 300грамм.</h2>
+                <span class="price">Цена: 170 руб.</span>
+            </article>
+            <article class="product">
+                <img src="лисички.jpg" alt="Продукт 7">
+                <h2>Лисички 1 кг.</h2>
+                <span class="price">Цена: 350 руб.</span>
+            </article>
+            <article class="product">
+                <img src="огурцы.jpg" alt="Продукт 8">
+                <h2>Огурцы короткоплодные 1 кг.</h2>
+                <span class="price">Цена: 210 руб.</span>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Все права защищены</p>
+    </footer>
+</body>
+</html>

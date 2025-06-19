@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="корзина.css">
+</head>
+<body>
+    <!-- Кнопка "Назад" -->
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Назад
+    </a>
+
+    <!-- Основной контент в "боксе" -->
+    <div class="content-box">
+
+
+        <h1 class="cart-title">Ваша корзина</h1>
+
+        <div id="cart-container">
+            <div id="cart-items">
+                <!-- Товар 1 -->
+                <div class="cart-item" data-item-id="1">
+                    <div class="item-image-container">
+                        <img src="творог.jpg" alt="Творог" class="item-image">
+                        <button class="remove-item" onclick="removeItem(1)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Творог</h3>
+                        <p class="item-description">В одной упаковке 400г</p>
+                        <div class="item-price-mobile">200 ₽</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(1, -1)">−</button>
+                            <input type="number" value="2" min="1" class="quantity-input" onchange="updateTotal()">
+                            <button class="quantity-btn plus" onclick="updateQuantity(1, 1)">+</button>
+                        </div>
+                        <div class="price-info">
+                            <span class="item-price">200 ₽</span>
+                            <span class="item-total"><span id="item1-total">400</span> ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 2 -->
+                <div class="cart-item" data-item-id="2">
+                    <div class="item-image-container">
+                        <img src="клубника.jpg" alt="Клубника" class="item-image">
+                        <button class="remove-item" onclick="removeItem(2)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Клубника</h3>
+                        <p class="item-description">В одной упаковке 1кг</p>
+                        <div class="item-price-mobile">1000 ₽</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(2, -1)">−</button>
+                            <input type="number" value="1" min="1" class="quantity-input" onchange="updateTotal()">
+                            <button class="quantity-btn plus" onclick="updateQuantity(2, 1)">+</button>
+                        </div>
+                        <div class="price-info">
+                            <span class="item-price">1000 ₽</span>
+                            <span class="item-total"><span id="item2-total">1000</span> ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 3 -->
+                <div class="cart-item" data-item-id="3">
+                    <div class="item-image-container">
+                        <img src="черника.jpg" alt="Черника" class="item-image">
+                        <button class="remove-item" onclick="removeItem(3)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Черника</h3>
+                        <p class="item-description">В одной упаковке 1кг</p>
+                        <div class="item-price-mobile">1200 ₽</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus" onclick="updateQuantity(3, -1)">−</button>
+                            <input type="number" value="3" min="1" class="quantity-input" onchange="updateTotal()">
+                            <button class="quantity-btn plus" onclick="updateQuantity(3, 1)">+</button>
+                        </div>
+                        <div class="price-info">
+                            <span class="item-price">1200 ₽</span>
+                            <span class="item-total"><span id="item3-total">3600</span> ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <div class="summary-card">
+                    <h3>Итог заказа</h3>
+                    <div class="summary-row">
+                        <span>Товары (3)</span>
+                        <span id="subtotal">5000 ₽</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Доставка</span>
+                        <span>Бесплатно</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>К оплате</span>
+                        <span id="total">5000 ₽</span>
+                    </div>
+                </div>
+
+                <div class="delivery-section">
+                    <h3><i class="fas fa-truck"></i> Доставка</h3>
+                    <div id="deliveryAddressDisplay" class="address-display">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Адрес не указан</span>
+                    </div>
+                    <button class="btn address-btn" onclick="openDeliveryModal()">
+                        <i class="fas fa-edit"></i> Указать адрес
+                    </button>
+                </div>
+
+                <div class="payment-section">
+                    <h3><i class="fas fa-credit-card"></i> Способ оплаты</h3>
+                    <select id="paymentMethod" class="payment-select">
+                        <option value="card">Банковская карта</option>
+                        <option value="cash">Наличными при получении</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </div>
+
+                <button id="pay-button" class="btn checkout-btn" onclick="processPayment()" disabled>
+                    <i class="fas fa-lock"></i> Оформить заказ
+                </button>
+            </div>
+
+            <div id="cart-empty-container" class="empty-cart">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>Ваша корзина пуста</h3>
+                <p>Добавьте товары из каталога</p>
+                <a href="index.html" class="btn back-to-shop">
+                    <i class="fas fa-arrow-left"></i> Вернуться к покупкам
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно адреса -->
+    <div id="deliveryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Укажите адрес доставки</h3>
+                <span class="close" onclick="closeDeliveryModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="district">Район</label>
+                        <input type="text" id="district" placeholder="Например: Центральный">
+                    </div>
+                    <div class="form-group">
+                        <label for="street">Улица</label>
+                        <input type="text" id="street" placeholder="Например: Ленина">
+                    </div>
+                    <div class="form-group">
+                        <label for="house">Дом</label>
+                        <input type="text" id="house" placeholder="Например: 15">
+                    </div>
+                    <div class="form-group">
+                        <label for="entrance">Подъезд</label>
+                        <input type="text" id="entrance" placeholder="Необязательно">
+                    </div>
+                    <div class="form-group">
+                        <label for="apartment">Квартира</label>
+                        <input type="text" id="apartment" placeholder="Необязательно">
+                    </div>
+                    <div class="form-group">
+                        <label for="intercom">Домофон</label>
+                        <input type="text" id="intercom" placeholder="Необязательно">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel-btn" onclick="closeDeliveryModal()">Отмена</button>
+                <button class="btn save-btn" onclick="saveDeliveryAddress()">Сохранить адрес</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 CowWow. Все права защищены.</p>
+    </footer>
+
+    <script src="корзина.js"></script>
+</body>
+</html>

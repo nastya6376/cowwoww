@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --nav-bg: rgba(51, 51, 51, 0.8);
+    --text-light: #f2f2f2;
+    --text-dark: #333;
+    --accent-color: #24ffb6;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(270deg, #f8f1e7, #412f2f);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Навигационная панель */
+.topnav {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topnav a {
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.topnav a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.topnav a.active {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.topnav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.topnav a:hover::after {
+    width: 80%;
+}
+
+/* Основной контент */
+.content {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.square {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    aspect-ratio: 1 / 1;
+}
+
+.square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.square:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.square:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .topnav a {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .container {
+        width: 95%;
+        gap: 15px;
+    }
+    
+    .text-overlay {
+        font-size: 1.8rem;
+    }
+    
+    .footer {
+        padding: 10px;
+    }
+    
+    .button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

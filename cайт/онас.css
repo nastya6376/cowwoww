@@ -1,0 +1,154 @@
+/* Общие стили */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 50px;
+    height: 100vh; /* Занять всю высоту окна */
+    animation: gradientAnimation 10s ease infinite; /* Анимация градиента */
+    background: linear-gradient(270deg, #f8f1e7, #412f2f);
+    background-size: 400% 400%; /* Увеличить размер фона для анимации */
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.back-button {
+    position: fixed;
+    top: 20px; /* Расположение от верхнего края */
+    right: 20px; /* Расположение от правого края */
+    background-color: #579120; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    padding: 10px 15px; /* Внутренние отступы */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+.back-button:hover {
+    background-color: #598331;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.footer {
+    background-color: #f1f1f1; /* Цвет фона футера */
+    border-top: 3px solid rgb(38, 105, 29); /* Верхняя граница */
+    padding: 8px; /* Отступы внутри футера */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Заголовок */
+.banner h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Секция */
+.section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;  
+    align-items: flex-start; 
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.section h2 {
+    font-size: 1.8em;
+    color: #3498db;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    /*width: 65%; убираем это*/
+}
+
+/* Объявление (сбоку) */
+.announcement {
+   
+    width: 90%; 
+    min-width: auto; 
+    padding: 20px;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.announcement h3 {
+    font-size: 1.4em;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.announcement ul {
+    list-style: none;
+    padding: 0;
+}
+
+.announcement li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1em;
+}
+
+.announcement li:last-child {
+    border-bottom: none;
+}
+
+
+
+
+/* Видео */
+.video-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.video-container video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Медиа запросы для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .announcement {
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
