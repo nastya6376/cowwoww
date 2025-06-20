@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="личкаб.css">
+</head>
+<body>
+    <a href="index.html" class="back-button">Вернуться на главную</a>
+    <div class="container1">
+    <div class="container">
+        <header>
+            <h1>Личный кабинет</h1>
+            <button id="logoutBtn">Выйти</button>
+        </header>
+        
+        <main>
+            <section class="profile">
+                <h2>Мой профиль</h2>
+                <div class="profile-info">
+                    <p><strong>Имя: </strong><span id="userName"></span></p>
+                    <p><strong>Никнейм: </strong><span id="userNickname"></span></p>
+                    <p><strong>Email: </strong><span id="userEmail"></span></p>
+                    <p><strong>День рождения: </strong><span id="userBirthday"></span></p>
+                    <p><strong>Телефон: </strong><span id="userPhone"></span></p>
+                    <p><strong>Район: </strong><span id="userDistrict"></span></p>
+                    <p><strong>Пол: </strong><span id="userGender"></span></p>
+                    <button id="editProfileBtn">Редактировать профиль</button>
+                </div>
+            </section>
+
+            <section class="settings">
+                <h2>Настройки</h2>
+                <div class="settings-info">
+                    <label for="notifications">Уведомления:</label>
+                    <input type="checkbox" id="notifications" checked>
+                </div>
+            </section>
+            <section class="additional-info">
+                <h2>Дополнительная информация</h2>
+              <div class="user-actions">
+                <button id="myReviewsBtn">Мои отзывы</button>
+                <button id="favoritesBtn">Избранное</button>
+                <button id="myOrdersBtn">Мои заказы</button>
+              </div>
+            </section>
+
+        </main>
+
+            </section>
+        </main>
+
+
+    </div>
+    </div>
+    <script src="личкаб.js"></script>
+<footer class="footer">
+    Все права защищены &copy; 2025
+</footer>
+</body>
+</html>

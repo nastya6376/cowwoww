@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 50px;
+  height: 100vh; /* Занять всю высоту окна */
+  animation: gradientAnimation 10s ease infinite; /* Анимация градиента */
+  background: linear-gradient(270deg, #f8f1e7, #412f2f);
+  background-size: 400% 400%; /* Увеличить размер фона для анимации */
+}
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+.back-button {
+  position: fixed;
+  top: 20px; /* Расположение от верхнего края */
+  right: 20px; /* Расположение от правого края */
+  background-color: #579120; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px 15px; /* Внутренние отступы */
+  text-decoration: none; /* Убираем подчеркивание */
+  border-radius: 5px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+  transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+.back-button:hover {
+  background-color: #598331;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.select_input {
+  max-width: 700px;
+  width: 100%;
+  padding-left: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 12pt;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  height: 45px;
+}
+.value{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.603), rgba(92, 240, 215, 0.877)) ;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #94f587);
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+.user-details .input-box input {
+  height: 45px;
+  width: 420px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #5984b6;
+}
+form .gender-details .gender-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #59b68f;
+  border-color: #d9d9d9;
+}
+form input[type="radio"] {
+  display: none;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: rgb(58, 58, 58);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #a8dbfd, #74f0bc);
+  opacity: 1; /* Ensure the button is fully visible when enabled */
+  pointer-events: auto; /* Ensure the button is clickable when enabled */
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #a8dbfd, #74f0bc);
+}
+
+/* Styles for the disabled button */
+form .button input:disabled {
+  background: #ddd; /* Light gray background */
+  color: #888; /* Gray text */
+  cursor: not-allowed; /* Indicate that the button is not clickable */
+  opacity: 0.7; /* Reduce the opacity for visual indication */
+  pointer-events: none; /* Make sure it's not clickable even with styles */
+}
+
+/* Optional: If you want different hover effect when disabled */
+form .button input:disabled:hover {
+  background: #ddd; /* Keep the disabled background on hover */
+}
+
+
+
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}

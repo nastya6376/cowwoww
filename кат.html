@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="кат.css">
+    <title>Поисковик товаров и фермеров</title>
+</head>
+<body>
+    <a href="index.html" class="back-button">Вернуться на главную</a>
+    <div class="container">
+        <h1>Каталог</h1>
+        <div class="header">
+            <div class="search-container">
+                <input type="text" placeholder="Поиск по товарам" id="product-search">
+                <button onclick="searchProducts()">Поиск</button>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Поиск фермеров" id="farmer-search">
+                <button onclick="searchFarmers()">Поиск</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="filters">
+                <h3>Фильтры товаров</h3>
+                <label>Категория товара:</label>
+                <select id="category">
+                    <option value="">Выберите категорию</option>
+                    <option value="fruits">Фрукты</option>
+                    <option value="vegetables">Овощи</option>
+                    <option value="dairy">Молочные продукты</option>
+                    <option value="meat">Мясо</option>
+                    <option value="nuts">Орехи</option>
+                    <option value="eggs">Яйца</option>
+                    <option value="bakery">Хлебобулочные изделия</option>
+                    <option value="honey">Мёд</option>
+                    <option value="gluten-free">Продукты без глютена</option>
+                    <option value="beverages">Напитки (соки, вина и т.д.)</option>
+                </select>
+
+                <label>Способ производства:</label>
+                <select id="production-method">
+                    <option value="">Выберите способ</option>
+                    <option value="organic">Органический</option>
+                    <option value="eco">Экологически чистое</option>
+                    <option value="local">Местное</option>
+                    <option value="certified">Сертифицированное</option>
+                </select>
+
+                <label>Упаковка:</label>
+                <select id="packaging">
+                    <option value="">Выберите упаковку</option>
+                    <option value="plastic">Пластик</option>
+                    <option value="glass">Стекло</option>
+                </select>
+
+                <label>Цена:</label>
+                <input type="number" placeholder="От" id="price-from">
+                <input type="number" placeholder="До" id="price-to">
+
+                <label>Доступность:</label>
+                <select id="availability">
+                    <option value="">Текущая доступность</option>
+                    <option value="in-stock">В наличии</option>
+                    <option value="pre-order">Предзаказ</option>
+                    <option value="seasonal">Сезонные продукты</option>
+                </select>
+
+                <label>Расстояние (м):</label>
+                <input type="range" id="distance" min="0" max="3000" value="1500" oninput="this.nextElementSibling.value = this.value">
+                <output>1500</output>
+
+                <label>Рейтинг товара:</label>
+                <input type="number" placeholder="Мин." id="rating-from" min="1" max="5">
+                <input type="number" placeholder="Макс." id="rating-to" min="1" max="5">
+
+                <label>Специальные предложения:</label>
+                <input type="checkbox" id="special-offers">
+
+                <label>Аллергены:</label>
+                <select id="allergens">
+                    <option value="">Выберите аллергены</option>
+                    <option value="milk">Молоко</option>
+                    <option value="nuts">Орехи</option>
+                    <option value="soy">Соя</option>
+                    <option value="eggs">Куриное яйцо</option>
+                    <option value="peanuts">Арахис</option>
+                    <option value="honey">Мёд</option>
+                    <option value="seafood">Морепродукты</option>
+                    <option value="wheat">Пшеница</option>
+                    <option value="other">Другие</option>
+                </select>
+
+                <label>Предпочтения:</label>
+                <select id="preferences">
+                    <option value="">Выберите предпочтения</option>
+                    <option value="vegetarian">Вегатарианская пища</option>
+                    <option value="vegan">Веганская пища</option>
+                </select>
+                
+                <label>Производитель:</label>
+                <select id="manufacturer">
+                    <option value="">Выберите производителя</option>
+                    <option value="cowwow">CowWow</option>
+                    <option value="farmer1">Фермер1</option>
+                    <option value="brand1">Бренд1</option>
+                    <option value="local">Местные фермеры</option>
+                </select>
+            </div>
+            <div class="banners-container">
+                <div class="banner">
+                    <h3>Рекламный баннер: Супер предложения от фермеров!</h3>
+                </div>
+                <div class="banner">
+                    <h3>Баннер 1: Скидки на свежие продукты!</h3>
+                </div>
+                <div class="banner">
+                    <h3>Баннер 2: Попробуйте наши органические товары!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="кат.js"></script>
+    <footer class="footer">
+        Все права защищены &copy; 2025
+    </footer>
+</body>
+</html>

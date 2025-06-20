@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чаты с Тех Поддержкой и Фермерами</title>
+    <link rel="stylesheet" href="чаты.css">
+</head>
+<body>
+    <a href="index.html" class="back-button">Вернуться на главную</a>
+    <div class="container">
+    <h1>Доступные Чаты</h1>
+
+    <div class="chat-list">
+
+        <div class="chat-item" onclick="openChat('Тех Поддержка 1')">
+            <h3>Тех Поддержка 1</h3>
+            <p>Перейдите в чат, чтобы увидеть сообщения</p>
+        </div>
+        <div class="chat-item" onclick="openChat('Тех Поддержка 2')">
+            <h3>Тех Поддержка 2</h3>
+            <p>Перейдите в чат, чтобы увидеть сообщени</p>
+        </div>
+
+        <div class="chat-item" onclick="openChat('Фермер 1')">
+            <h3>Фермер 1</h3>
+            <p>Перейдите в чат, чтобы увидеть сообщени</p>
+        </div>
+        <div class="chat-item" onclick="openChat('Фермер 2')">
+            <h3>Фермер 2</h3>
+            <p>Перейдите в чат, чтобы увидеть сообщени</p>
+        </div>
+    </div>
+
+    <!-- Модальное окно для чата -->
+    <div id="chat-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeChat()">&times;</span>
+            <div id="chat-content" class="chat-content"></div>
+            <form id="message-form" onsubmit="sendMessage(event)">
+                <input type="text" id="message-input" placeholder="Введите ваше сообщение..." required />
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="чаты.js"></script>
+    <footer class="footer">
+        Все права защищены &copy; 2025
+    </footer>
+</body>
+</html>

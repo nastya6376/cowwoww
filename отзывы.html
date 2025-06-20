@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы на продукты</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="отзывы.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="index.html" class="back-button">
+    <i class="fas fa-arrow-left"></i> Назад
+  </a>
+
+  <div class="container">
+    <h1><i class="fas fa-comments"></i> Отзывы на продукты</h1>
+
+    <button id="addReviewBtn">
+      <i class="fas fa-plus"></i> Оставить отзыв
+    </button>
+
+    <div class="product-filter">
+      <label for="productSelect"><i class="fas fa-filter"></i> Фильтр по продукту:</label>
+      <select id="productSelect">
+        <option value="all">Все продукты</option>
+        <option value="strawberry">Клубника</option>
+        <option value="blueberry">Черника</option>
+        <option value="raspberry">Малина</option>
+        <option value="milk">Молоко</option>
+        <option value="mushrooms">Лисички</option>
+      </select>
+    </div>
+
+    <div id="reviewsContainer" class="reviews-container">
+      <!-- Отзывы будут загружены через JavaScript -->
+      <div class="empty-reviews" id="emptyReviewsMessage">
+        <i class="fas fa-comment-slash"></i>
+        <h3>Пока нет отзывов</h3>
+        <p>Будьте первым, кто оставит отзыв!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для добавления отзыва -->
+  <div id="addReviewModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-edit"></i> Новый отзыв</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="reviewProduct"><i class="fas fa-tag"></i> Продукт:</label>
+          <select id="reviewProduct" name="reviewProduct" required>
+            <option value="">Выберите продукт</option>
+            <option value="strawberry">Клубника</option>
+            <option value="blueberry">Черника</option>
+            <option value="raspberry">Малина</option>
+            <option value="milk">Молоко</option>
+            <option value="mushrooms">Лисички</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="rating"><i class="fas fa-star"></i> Оценка:</label>
+          <div class="rating-stars" id="ratingStars">
+            <i class="far fa-star" data-rating="1"></i>
+            <i class="far fa-star" data-rating="2"></i>
+            <i class="far fa-star" data-rating="3"></i>
+            <i class="far fa-star" data-rating="4"></i>
+            <i class="far fa-star" data-rating="5"></i>
+            <input type="hidden" id="rating" name="rating" value="0">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="reviewText"><i class="fas fa-comment"></i> Ваш отзыв:</label>
+          <textarea id="reviewText" name="reviewText" placeholder="Поделитесь вашим мнением о продукте..." required></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="cancel-btn">Отмена</button>
+        <button class="submit-btn" id="submitReviewBtn">Опубликовать</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 CowWow. Все права защищены.</p>
+  </footer>
+
+  <script src="отзывы.js"></script>
+</body>
+</html>

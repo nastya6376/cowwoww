@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Анкета </title>
+  <link rel="stylesheet" href="anketa.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="title">Регистрация</div>
+    <div class="content">
+
+       <form id="registerForm" action="#" method="POST">
+            <div class="user-details">
+
+                <div class="input-box">
+                    <span class="details">Имя</span>
+                    <input type="text" id="registerName" name="registerName" placeholder="Тапай сюда" minlength="2" maxlength="20" required>
+                </div>
+            </div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Никнейм</span>
+                    <input type="text" id="registerNickname" name="registerNickname" placeholder="Тапай сюда" minlength="2" maxlength="20" required>
+                </div>
+            </div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" id="registerEmail" name="registerEmail" placeholder="Тапай сюда" minlength="10" maxlength="60" required>
+                </div>
+            </div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Дата рождения</span>
+                    <input type="date" id="registerBirthday" name="registerBirthday" required>
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Номер телефона</span>
+                    <input type="tel" id="registerPhone" name="registerPhone" placeholder="+7XXXXXXXXXX" pattern="^\+7\d{10}$" minlength="12" maxlength="12" required>
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Введите пароль</span>
+                    <input type="password" id="registerPassword" name="registerPassword" placeholder="Тапай сюда" minlength="8" maxlength="20" required>
+                </div>
+            </div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Подтвердите пароль</span>
+                    <input type="password" id="registerConfirmPassword" name="registerConfirmPassword" placeholder="Тапай сюда" minlength="8" maxlength="20" required>
+                </div>
+            </div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Район</span>
+                    <select class="select_input" id="registerDistrict" name="registerDistrict">
+                        <option hidden selected value=""></option>
+                        <option value="Адмиралтейский район">Адмиралтейский район</option>
+                        <option value="Василеостровский район">Василеостровский район</option>
+                        <option value="Выборгский район">Выборгский район</option>
+                        <option value="Калининский район">Калининский район</option>
+                        <option value="Кировский район">Кировский район</option>
+                        <option value="Колпенский район">Колпенский район</option>
+                        <option value="Красногвардейский район">Красногвардейский район</option>
+                        <option value="Красносельский район">Красносельский район</option>
+                        <option value="Кронштадтский район">Кронштадтский район</option>
+                        <option value="Курортный район">Курортный район</option>
+                        <option value="Московский район">Московский район</option>
+                        <option value="Невский район">Невский район</option>
+                        <option value="Петроградский район">Петроградский район</option>
+                        <option value="Петродворцовый район">Петродворцовый район</option>
+                        <option value="Приморский район">Приморский район</option>
+                        <option value="Пушкинский район">Пушкинский район</option>
+                        <option value="Фрунзенский район">Фрунзенский район</option>
+                        <option value="Тосно">Тосно</option>
+                        <option value="Центральный район">Центральный район</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gender-details">
+
+                <input type="radio" name="gender" id="dot-1" value="Женщина">
+                <input type="radio" name="gender" id="dot-2" value="Мужчина">
+                <input type="radio" name="gender" id="dot-3" value="Аноним">
+                <span class="gender-title">Ваш пол</span>
+                <div class="category">
+
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Женщина</span>
+                    </label>
+
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Мужчина</span>
+                    </label>
+
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span class="gender">Я аноним</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" id="registerButton" value="Зарегистрироваться">
+            </div>
+             <p id="registerMessage"></p>
+        </form>
+    </div>
+</div>
+
+<script src="anketa.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ближайшие ярмарки</title>
+    <link rel="stylesheet" type="text/css" href="poisk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="поиск1.html" class="back-button">Назад</a>
+    <div class="container">
+        <h1>Ближайшие ярмарки</h1>
+
+        <div class="market-container" id="market1">
+            <div class="market-header" onclick="toggleDescription('market1', 'desc1')">
+                <h2>Ярмарка свежих овощей <span class="arrow">➕</span></h2>
+                <p class="market-info">Адрес: ул. Овощная, 10, Санкт-Петербург | Дата: 15 марта, 10:00-18:00</p>
+            </div>
+            <div class="market-description" id="desc1">
+                <p>На ярмарке будут представлены свежие овощи от местных фермеров:</p>
+                <ul>
+                    <li>Сезонные овощи прямо с грядки</li>
+                    <li>Экологически чистые продукты</li>
+                    <li>Редкие сорта овощей</li>
+                    <li>Фермерские соленья и консервация</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="market-container" id="market2">
+            <div class="market-header" onclick="toggleDescription('market2', 'desc2')">
+                <h2>Ярмарка местных продуктов <span class="arrow">➕</span></h2>
+                <p class="market-info">Адрес: ул. Продуктовая, 5, Ленинградская область | Дата: 20 марта, 11:00-19:00</p>
+            </div>
+            <div class="market-description" id="desc2">
+                <p>Разнообразные продукты от местных производителей:</p>
+                <ul>
+                    <li>Фермерское мясо и птица</li>
+                    <li>Свежие молочные продукты</li>
+                    <li>Домашняя выпечка</li>
+                    <li>Натуральный мёд</li>
+                    <li>Экологически чистые яйца</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="market-container" id="market3">
+            <div class="market-header" onclick="toggleDescription('market3', 'desc3')">
+                <h2>Ярмарка цветов <span class="arrow">➕</span></h2>
+                <p class="market-info">Адрес: пр. Цветочный, 15, Санкт-Петербург | Дата: 25 марта, 12:00-20:00</p>
+            </div>
+            <div class="market-description" id="desc3">
+                <p>Широкий ассортимент цветов и растений:</p>
+                <ul>
+                    <li>Сезонные цветы</li>
+                    <li>Комнатные растения</li>
+                    <li>Саженцы для дачи</li>
+                    <li>Экзотические растения</li>
+                    <li>Сопутствующие товары</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="market-container" id="market4">
+            <div class="market-header" onclick="toggleDescription('market4', 'desc4')">
+                <h2>Эко-ярмарка "Зеленый город" <span class="arrow">➕</span></h2>
+                <p class="market-info">Адрес: парк Горького, главная аллея | Дата: 30 марта, 10:00-18:00</p>
+            </div>
+            <div class="market-description" id="desc4">
+                <p>Экологичные товары и продукты:</p>
+                <ul>
+                    <li>Органические продукты питания</li>
+                    <li>Эко-бытовая химия</li>
+                    <li>Натуральная косметика</li>
+                    <li>Товары для zero waste</li>
+                    <li>Эко-мастер-классы</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(containerId, descId) {
+            const container = document.getElementById(containerId);
+            const description = document.getElementById(descId);
+            
+            if (description.style.display === 'block') {
+                description.style.display = 'none';
+                container.classList.remove('active');
+            } else {
+                description.style.display = 'block';
+                container.classList.add('active');
+            }
+        }
+    </script>
+
+    <footer class="footer">
+        2025 CowWow. Все права защищены &copy; 2025
+    </footer>
+</body>
+</html>
